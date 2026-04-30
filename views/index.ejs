@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Welcome <%= user.username %>
+    </h3>
+
+    <a href="/scholarship/new">Add</a>
+
+    <ul>
+        <% data.forEach(d=> { %>
+            <li>
+                <%= d.scholarshipHolder %> - <%= d.percentage %>
+                        <a href="/scholarship/<%= d._id %>">Show</a>
+                        <a href="/scholarship/<%= d._id %>/edit">Edit</a>
+            </li>
+            <% }) %>
+    </ul>
+
+    <a href="/logout">Logout</a>
+</body>
+
+</html>
